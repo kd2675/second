@@ -16,10 +16,64 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+subprojects {
+    group 'com.example'
+    version '0.0.1-SNAPSHOT'
+    sourceCompatibility = '17'
+
+    apply plugin: 'java-library'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+    }
+}
+
+project(':common-core') {
+    // 공통 코드
+
+    bootJar { enabled = false } // core 은 bootJar 로 패키징 할 필요 없음
+    jar { enabled = true }
+
+    dependencies {
+    }
+}
+
+project(':common-database') {
+    bootJar { enabled = false }
+    jar { enabled = true }
+
+    dependencies {
+        implementation project(':common-core') // 컴파일 시 velog-core project 로딩
+    }
+}
+
+project(':service-batch') {
+    dependencies {
+        implementation project(':common-core') // 컴파일 시 velog-core project 로딩
+        implementation project(':common-database') // 컴파일 시 velog-core project 로딩
+    }
+}
+
+project(':service-cocoin') {
+    dependencies {
+        implementation project(':common-core') // 컴파일 시 velog-core project 로딩
+        implementation project(':common-database') // 컴파일 시 velog-core project 로딩
+    }
 }
