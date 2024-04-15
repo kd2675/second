@@ -60,20 +60,30 @@ project(':common-database') {
     jar { enabled = true }
 
     dependencies {
-        implementation project(':common-core') // 컴파일 시 velog-core project 로딩
+        implementation project(':common-core')
+    }
+}
+
+project(':common-log') {
+    bootJar { enabled = false }
+    jar { enabled = true }
+
+    dependencies {
+        implementation project(':common-core')
+        implementation project(':common-database')
     }
 }
 
 project(':service-batch') {
     dependencies {
-        implementation project(':common-core') // 컴파일 시 velog-core project 로딩
-        implementation project(':common-database') // 컴파일 시 velog-core project 로딩
+        implementation project(':common-core')
+        implementation project(':common-database')
     }
 }
 
 project(':service-cocoin') {
     dependencies {
-        implementation project(':common-core') // 컴파일 시 velog-core project 로딩
-        implementation project(':common-database') // 컴파일 시 velog-core project 로딩
+        implementation project(':common-core')
+        implementation project(':common-database')
     }
 }
