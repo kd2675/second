@@ -78,6 +78,7 @@ project(':service-batch') {
     dependencies {
         implementation project(':common-core')
         implementation project(':common-database')
+        implementation project(':common-log')
     }
 }
 
