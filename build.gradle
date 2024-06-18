@@ -49,6 +49,13 @@ subprojects {
     }
 }
 
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = true
+}
+
 project(':common-core') {
     // 공통 코드
 
@@ -80,6 +87,9 @@ project(':common-log') {
 
 project(':service-batch') {
     dependencies {
+        implementation project(':common-core')
+        implementation project(':common-database')
+        implementation project(':common-log')
     }
 }
 
