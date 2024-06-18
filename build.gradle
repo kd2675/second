@@ -32,6 +32,10 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
 
     configurations {
+        developmentOnly
+        runtimeClasspath {
+            extendsFrom developmentOnly
+        }
         compileOnly {
             extendsFrom annotationProcessor
         }
