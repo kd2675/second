@@ -2,6 +2,6 @@ rootProject.name = 'second'
 include 'common-core'
 include 'common-database'
 include 'common-log'
-include 'service-batch'
+include 'server-batch'
 include 'service-cocoin'
 
