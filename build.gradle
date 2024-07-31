@@ -85,6 +85,38 @@ project(':common-log') {
     }
 }
 
+project(':server-cloud') {
+    dependencies {
+        implementation project(':common-core')
+        implementation project(':common-database')
+        implementation project(':common-log')
+    }
+}
+
+project(':server-socket') {
+    dependencies {
+        implementation project(':common-core')
+        implementation project(':common-database')
+        implementation project(':common-log')
+    }
+}
+
+project(':server-file') {
+    dependencies {
+        implementation project(':common-core')
+        implementation project(':common-database')
+        implementation project(':common-log')
+    }
+}
+
+project(':server-member') {
+    dependencies {
+        implementation project(':common-core')
+        implementation project(':common-database')
+        implementation project(':common-log')
+    }
+}
+
 project(':server-batch') {
     dependencies {
         implementation project(':common-core')
