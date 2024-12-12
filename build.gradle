@@ -88,8 +88,8 @@ project(':common-log') {
 project(':server-cloud') {
     dependencies {
         implementation project(':common-core')
-        implementation project(':common-database')
-        implementation project(':common-log')
+//        implementation project(':common-database')
+//        implementation project(':common-log')
     }
 }
 
