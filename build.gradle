@@ -86,6 +86,9 @@ project(':common-log') {
 }
 
 project(':server-cloud') {
+    bootJar { enabled = false }
+    jar { enabled = true }
+
     dependencies {
         implementation project(':common-core')
 //        implementation project(':common-database')
