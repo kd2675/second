@@ -6,6 +6,5 @@ include 'server-cloud'
 include 'server-batch'
 include 'server-member'
 include 'service-cocoin'
-include 'server-socket'
 include 'server-file'
 

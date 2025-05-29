@@ -96,17 +96,6 @@ project(':server-cloud') {
     }
 }
 
-project(':server-socket') {
-    bootJar { enabled = false }
-    jar { enabled = true }
-
-    dependencies {
-        implementation project(':common-core')
-        implementation project(':common-database')
-        implementation project(':common-log')
-    }
-}
-
 project(':server-file') {
     bootJar { enabled = false }
     jar { enabled = true }
