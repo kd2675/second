@@ -86,9 +86,6 @@ project(':common-log') {
 }
 
 project(':server-cloud') {
-    bootJar { enabled = false }
-    jar { enabled = true }
-
     dependencies {
         implementation project(':common-core')
 //        implementation project(':common-database')
@@ -97,9 +94,6 @@ project(':server-cloud') {
 }
 
 project(':server-file') {
-    bootJar { enabled = false }
-    jar { enabled = true }
-
     dependencies {
         implementation project(':common-core')
         implementation project(':common-database')
@@ -108,15 +102,13 @@ project(':server-file') {
 }
 
 project(':server-member') {
-    bootJar { enabled = false }
-    jar { enabled = true }
-
     dependencies {
         implementation project(':common-core')
         implementation project(':common-database')
         implementation project(':common-log')
     }
 }
+
 
 project(':server-batch') {
     dependencies {
@@ -127,9 +119,14 @@ project(':server-batch') {
 }
 
 project(':service-cocoin') {
-    bootJar { enabled = false }
-    jar { enabled = true }
+    dependencies {
+        implementation project(':common-core')
+        implementation project(':common-database')
+        implementation project(':common-log')
+    }
+}
 
+project(':service-batch') {
     dependencies {
         implementation project(':common-core')
         implementation project(':common-database')
