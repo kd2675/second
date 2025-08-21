@@ -65,7 +65,6 @@ server-batch
 server-cloud
 server-file
 server-member
-server-api
 
 service-batch
 service-cocoin
