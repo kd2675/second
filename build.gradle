@@ -147,3 +147,19 @@ project(':service-batch') {
         implementation project(':common-log')
     }
 }
+
+project(':server-bus') {
+    dependencies {
+//        implementation project(':common-core')
+//        implementation project(':common-database')
+//        implementation project(':common-log')
+    }
+}
+
+project(':server-config') {
+    dependencies {
+//        implementation project(':common-core')
+//        implementation project(':common-database')
+//        implementation project(':common-log')
+    }
+}
