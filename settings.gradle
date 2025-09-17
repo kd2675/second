@@ -9,6 +9,8 @@ include 'server-config'
 include 'server-batch'
 include 'server-member'
 include 'server-file'
+include 'server-config'
+include 'server-bus'
 include 'service-cocoin'
 include 'service-batch'
 
