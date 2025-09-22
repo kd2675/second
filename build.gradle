@@ -150,7 +150,7 @@ project(':service-batch') {
 
 project(':server-bus') {
     dependencies {
-//        implementation project(':common-core')
+        implementation project(':common-core')
 //        implementation project(':common-database')
 //        implementation project(':common-log')
     }
