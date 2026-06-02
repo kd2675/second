@@ -8,7 +8,9 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    sourceCompatibility = '17'
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 repositories {
@@ -25,11 +27,16 @@ tasks.named('test') {
 subprojects {
     group 'com.example'
     version '0.0.1-SNAPSHOT'
-    sourceCompatibility = '17'
 
     apply plugin: 'java'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
 
     configurations {
         developmentOnly
