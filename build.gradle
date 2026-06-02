@@ -85,6 +85,15 @@ project(':common-log') {
     }
 }
 
+project(':common-logstash') {
+    bootJar { enabled = false }
+    jar { enabled = true }
+
+    dependencies {
+        implementation project(':common-core')
+    }
+}
+
 project(':server-cloud') {
     dependencies {
         implementation project(':common-core')
@@ -153,6 +162,7 @@ project(':server-bus') {
         implementation project(':common-core')
 //        implementation project(':common-database')
 //        implementation project(':common-log')
+        implementation project(':common-logstash')
     }
 }
 
